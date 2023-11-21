@@ -22,8 +22,12 @@ export const ProductProvider = ({ children }) => {
     setProductList(updatedList);
   };
 
+  const handleEdit = (id) => {
+    
+  };
+
   return (
-    <ProductContext.Provider value={{ productList, addProduct, deleteProduct, editProduct }}>
+    <ProductContext.Provider value={{ productList, addProduct, deleteProduct, editProduct, handleEdit }}>
       {children}
     </ProductContext.Provider>
   );

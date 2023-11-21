@@ -1,4 +1,3 @@
-// product.js
 import React, { createContext, useContext, useState } from 'react';
 const ProductContext = createContext();
 
@@ -23,12 +22,8 @@ export const ProductProvider = ({ children }) => {
     setProductList(updatedList);
   };
 
-  const handleEdit = (id) => {
-    const updatedList= productList.find((product) => product.id ===id);
-  };
-
   return (
-    <ProductContext.Provider value={{ productList, addProduct, deleteProduct, editProduct, handleEdit }}>
+    <ProductContext.Provider value={{ productList, addProduct, deleteProduct, editProduct }}>
       {children}
     </ProductContext.Provider>
   );

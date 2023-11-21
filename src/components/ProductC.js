@@ -8,7 +8,7 @@ const ProductC = () => {
 
   const startEditing = (id) => {
     setEditingId(id);
-    handleEdit(id); // Call handleEdit when starting to edit
+    handleEdit(id); 
   };
 
   const stopEditing = () => {

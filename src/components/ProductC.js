@@ -3,16 +3,15 @@ import { useProduct } from '../providers/product';
 import EditProduct from './EditProduct';
 
 const ProductC = () => {
-  const { productList, deleteProduct, handleEdit } = useProduct();
-  const [editingId, setEditingId] = useState(null);
+  const { productList, deleteProduct } = useProduct();
+  const [editingProduct, setEditingProduct] = useState(null);
 
-  const startEditing = (id) => {
-    setEditingId(id);
-    handleEdit(id); 
+  const startEditing = (product) => {
+    setEditingProduct(product);
   };
 
   const stopEditing = () => {
-    setEditingId(null);
+    setEditingProduct(null);
   };
 
   return (
@@ -20,9 +19,11 @@ const ProductC = () => {
       {productList.map((product) => (
         <li key={product.id}>
           {product.name}
-          <button onClick={() => startEditing(product.id)}>Edit</button>
+          <button onClick={() => startEditing(product)}>Edit</button>
           <button onClick={() => deleteProduct(product.id)}>Delete</button>
-          {editingId === product.id && <EditProduct id={product.id} onStopEditing={stopEditing} />}
+          {editingProduct && editingProduct.id === product.id && (
+            <EditProduct product={editingProduct} onStopEditing={stopEditing} />
+          )}
         </li>
       ))}
     </ul>

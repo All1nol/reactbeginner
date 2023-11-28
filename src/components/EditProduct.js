@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useProduct } from "../providers/product";
 
-const EditProduct = ({ id, onStopEditing }) => {
+const EditProduct = ({ product, onStopEditing }) => {
   const { editProduct } = useProduct();
-  const [editValue, setEditValue] = useState("");
+  const [editValue, setEditValue] = useState(product.name);
 
   const handleSaveEdit = () => {
-    editProduct(id, editValue);
-    setEditValue("");
-    onStopEditing(); 
+    editProduct(product.id, editValue);
+    onStopEditing();
   };
 
   return (

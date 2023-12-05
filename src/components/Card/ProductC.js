@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useProduct } from '../providers/product';
-import EditProduct from './EditProduct';
+import { useProduct } from '../../providers/product';
+import EditProduct from '../EditProduct';
 
 const ProductC = () => {
   const { productList, deleteProduct } = useProduct();

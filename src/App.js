@@ -1,7 +1,7 @@
 import React from "react";
 import { ProductProvider } from "./providers/product";
-import AddProduct from "./components/AddProduct";
-import ProductC from "./components/ProductC";
+import AddProduct from "./components/AddProduct/AddProduct";
+import ProductC from "./components/Card/ProductC";
 
 function App() {
   return (

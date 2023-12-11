@@ -36,6 +36,8 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^14.1.2"
+    "@babel/preset-env": "^7.23.6",
+    "@testing-library/react": "^14.1.2",
+    "esm": "^3.2.25"
   }
 }

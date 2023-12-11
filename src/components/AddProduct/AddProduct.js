@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { useProduct } from "../../providers/product";
-const { nanoid } = require('nanoid');
+// Replace this line in AddProduct.js
+// const { nanoid } = require('nanoid');
+
+// With this line
+import { nanoid } from 'nanoid/esm';
+
 const AddProduct = () => {
   const { addProduct } = useProduct();
   const [newProduct, setNewProduct] = useState("");

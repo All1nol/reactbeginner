@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { useProduct } from "../../providers/product";
-// Replace this line in AddProduct.js
 // const { nanoid } = require('nanoid');
-
-// With this line
-import { nanoid } from 'nanoid/esm';
-
 const AddProduct = () => {
   const { addProduct } = useProduct();
   const [newProduct, setNewProduct] = useState("");
@@ -15,7 +10,7 @@ const AddProduct = () => {
     if (newProduct.trim() === "") return;
 
     const newProductItem = {
-      id: nanoid(),
+      // id: nanoid(),
       name: newProduct,
     };
 

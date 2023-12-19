@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useProduct } from "../../providers/product";
-// const { nanoid } = require('nanoid');
+import { nanoid } from "nanoid";
 const AddProduct = () => {
   const { addProduct } = useProduct();
   const [newProduct, setNewProduct] = useState("");
@@ -10,9 +10,11 @@ const AddProduct = () => {
     if (newProduct.trim() === "") return;
 
     const newProductItem = {
-      // id: nanoid(),
+      id: nanoid(),
       name: newProduct,
     };
+
+    
 
     addProduct(newProductItem);
     setNewProduct("");
@@ -21,8 +23,8 @@ const AddProduct = () => {
   return (
     <form onSubmit={handleAddProduct}>
       <input
-        type="text"
-        placeholder="Enter a product"
+        type="text" 
+        placeholder="Enter a product" 
         value={newProduct}
         onChange={(event) => setNewProduct(event.target.value)}
       />
